@@ -50,7 +50,8 @@ img {
   color: white;
   background-color: #605e94;
   border: 1px solid #4c4a75;
-  border-radius: 5px; }
+  border-radius: 5px;
+  outline: none; }
   .c-btn:hover, .c-btn active {
     color: white;
     background-color: #9b99bf; }
@@ -155,7 +156,7 @@ img {
 .c-navbar__btn {
   padding: 10px 10px;
   border: 0px;
-  outline: 0;
+  outline: none;
   background-color: #DBDBDB;
   transition: 0.3s; }
   .c-navbar__btn:hover, .c-navbar__btn :active {
@@ -168,7 +169,8 @@ img {
     padding: 0.33rem .66rem;
     margin: 0.6rem 1.5rem;
     border: 1px;
-    border-radius: 5px; }
+    border-radius: 5px;
+    outline: none; }
   .c-navbar__btn__count {
     font-weight: bold;
     margin-right: 5px; }
