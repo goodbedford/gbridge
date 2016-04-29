@@ -1,0 +1,21 @@
+{
+  "name": "uikit",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "goodbedford"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.6",
+    "normalize-css": "^4.1.1"
+  }
+}

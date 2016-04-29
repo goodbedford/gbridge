@@ -1,0 +1,334 @@
+@import 'ui-helper';
+$first-color: #F2385A;
+$second-color: #F5A503;
+$third-color: #36B1BF;
+$fourth-color: #0A0A0A;
+$fifth-color: #DBDBDB;
+
+$color-1: #605e94;
+$color-2: #c17a22;
+$color-3: #cd954e;
+$color-4: #f3e4d3;
+$color-5: #DBDBDB;
+$color-light: white;
+$color-dark: #333333;
+
+@mixin btn-default( $color, $color-bg) {
+  border: 0px;
+  padding: 5px 10px;
+  color: $color;
+  background-color: $color-bg;
+  border: 1px solid darken($color-bg,10%);
+  border-radius: 5px;
+}
+@mixin btn-hover-active($color, $color-bg) {
+  color: $color;
+  background-color: lighten($color-bg,20%);
+}
+.vert-align {
+  background-color: $second-color;
+  height: 10em;
+  text-align: center;
+
+  &:before {
+    content:'';
+    display: inline-block;
+    height:100%;
+    vertical-align: middle;
+  }
+
+  &:hover {
+    background-color: silver;
+  }
+  &__content {
+    font-size: 3em;
+    background: white;
+    display: inline-block;
+    vertical-align: middle;
+    padding: 10px 15px;
+    box-sizing: border-box;
+    border-radius: 50px;
+  }
+}
+
+.banner {
+  width: 100%;
+  height: 5em;
+  overflow: hidden;
+  &__img {
+    width: 100%;
+  }
+}
+body {
+  padding-top: 46px;
+  background-color: rgb(245,245,245);
+  min-width: 360px;
+}
+
+img {
+  width: 50px;
+}
+
+.c-btn {
+  @include btn-default($color-light, $color-1);
+  &:hover,active {
+    @include btn-hover-active($color-light, $color-1);
+  }
+}
+.c-footer {
+  font-size: 0.8em;
+  color: $color-light;
+  background-color: #333333;
+  text-align:center;
+  padding: 3em 0em;
+
+  //c-footer__content
+  &__content {
+    display: inline-block;
+
+    //c-footer__content__img
+    &__img {
+      width: 50px;
+      display: inline-block;
+    }
+
+    //c-footer__content__link
+    &__link {
+      display: inline-block;
+      color: $color-light;
+      margin: 1em 1em;
+    }
+  }
+
+  //c-footer__content--md
+  &__content--md {
+    width: 49%;
+  }
+
+}
+.c-main-content {
+  background-color: lighten($color-1, 60%);
+  padding-bottom: 2em;
+
+  //c-main-content__header
+  &__header {
+    text-align: center;
+    color: $color-4;
+    background-color: $color-3;
+    padding: 2px;
+    margin: 0em 0em 1em;
+  }
+}
+.c-media {
+  display: inline-block;
+  background-color: white;
+
+  //c-media--md
+  &--md {
+    width: 45%;
+    margin: 1% 2%;
+  }
+  @media screen and (min-width: 600px) {
+    //c-media--md
+    &--md {
+      width: 28%;
+    }
+  }
+  @media screen and (min-width: 700px){
+    &--md {
+      width: 20%;
+    }
+  }
+
+  //c-media__img-container
+  &__img-container {
+    padding: 0.33rem;
+
+    //c-media__img-container__img
+    &__img {
+      display:block;
+      width: 100%;
+      border: 5px solid $color-light;
+      -webkit-box-shadow: -1px 5px 25px -8px rgba(150,147,150,1);
+      -moz-box-shadow: -1px 5px 25px -8px rgba(150,147,150,1);
+      box-shadow: -1px 5px 25px -8px rgba(150,147,150,1);
+    }
+  }
+}
+
+
+.c-navbar {
+
+  //c-navbar__brand-container
+  &__brand-container {
+
+    //c-navbar__brand-container__img
+    &__img {
+      display: inline-block;
+      width: 15rem;
+      padding: 0.5em;
+    }
+  }
+  //c-navbar__dropdown-container
+  &__dropdown-container {
+    position:absolute;
+    height: 19rem;
+    width:100%;
+    color: $color-light;
+    background-color: lighten($color-1, 20%);
+    margin: 0;
+    padding: 0;
+    transition: height 0.3s;
+    overflow:hidden;
+
+    //c-navbar__dropdown-container__item
+    &__item {
+      display:block;
+      border-bottom:1px dashed $color-1;
+
+      //c-navbar__dropdown-container__item__img
+      &__img {
+        height: 1.4rem;
+        width: 1.4rem;
+        border-radius: 50%;
+      }
+
+      //c-navbar__dropdown-container__item__link
+      &__link {
+        display: block;
+        color: $color-light;
+        text-decoration: none;
+        padding: 0.33rem 1rem;
+
+        &:hover {
+          background-color: lighten($color-1, 25%);
+          transition: 0.3s;
+
+        }
+      }
+
+      //c-navbar__dropdown-container__item__input
+      &__input {
+        width: 90%;
+        color:$color-1;
+        border:0;
+      }
+    }
+  }
+
+  //c-navbar__fixed-top
+  &__fixed-top {
+    position:fixed;
+    top:0;
+    width: 100%;
+  }
+
+  //c-navbar__header
+  &__header {
+    background-color: $color-1;
+    padding: 1px;
+  }
+
+  //c-navbar__header--sub
+  &__header--sub {
+    background-color: $color-5;
+  }
+
+  //c-navbar__btn
+  &__btn {
+    padding: 10px 10px;
+    border:0px;
+    outline:0;
+    background-color: $color-5;
+    transition: 0.3s;
+    &:hover,:active {
+      background-color: darken($color-5, 10%);
+    }
+
+    //c-navbar__btn--sm-text
+    &--sm-text {
+      font-size: 0.8em;
+    }
+
+    //c-navbar__btn--toggle
+    &--toggle {
+      float: right;
+      font-size: 1em;
+      padding: 0.33rem .66rem;
+      margin: 0.6rem 1.5rem;
+      border: 1px;
+      border-radius: 5px;
+    }
+
+    //c-navbar__count
+    &__count {
+      font-weight: bold;
+      margin-right: 5px;
+    }
+  }
+};
+.c-profile {
+  text-align: center;
+  background-color: lighten($color-1, 60%);
+
+  padding: 0em 1em 3em 1em;
+
+  //c-profile__content
+  &__content {
+    box-sizing: border-box;
+
+    //c-profile__content__icon-container
+    &__icon-container {
+      margin: 1em;
+
+      //c-profile__content__icon-container__icon
+      &__icon {
+        font-size: 2em;
+        color: $color-2;
+        padding: 0px 5px;
+        transition: 0.3s;
+        &:hover,:active {
+          color: $color-5;
+        }
+      }
+    }
+  }
+
+  //c-profile__img-container
+  &__img-container {
+    width: 100%;
+    box-sizing: border-box;
+
+    //c-profile__img-container__img
+    &__img {
+      display: inline-block;
+      width: 3.75rem;
+      margin: 1rem auto 0rem auto;
+      border-radius: 50%;
+      border: 2px solid $color-1;
+    }
+    // when screen is bigger than 766px;
+    @media screen and (min-width: 766px) {
+      &__img {
+        width: 5rem;
+        margin-top: -2rem
+      }
+    }
+  }
+}
+
+
+// utility rules
+.u-icon--rt-m-space {
+  margin-right: 0.33rem;
+}
+.u-icon--lt-m-space2 {
+  margin-left: 1.73rem;
+}
+.u-icon--lt-p-space2 {
+  padding-left: 2.73rem;
+}
+.u-hidden {
+  height: 0;
+  overflow:hidden;
+}
